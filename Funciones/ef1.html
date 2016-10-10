@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script language="JavaScript">
+	function letras(frase) {
+		var letras = frase.split("");
+		var min = 0;
+		var may = 0;
+		var index;
+		for (index = 0; index < letras.length; ++index) {
+			var mayus = letras[index].toUpperCase();
+			if (letras[index]==mayus){
+				may++;
+			} else {
+				min++;
+			}
+		}
+		return "La frase contiene "+letras.length+" letras. "+may+" mayusculas y "+min+" minusculas.";
+	}
+	var frase = prompt("Escribe una frase: ");
+	document.write(letras(frase));
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

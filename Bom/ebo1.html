@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+   #cuadro  { width: 400px; height: 250px; border: 1px black solid; background-color: red}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	function anadir() {
+
+		var nuevo = document.createElement("div"); 
+	  	var texto = document.createTextNode("SOY UN NUEVO <DIV>"); 
+	  	nuevo.appendChild(texto);
+		var color = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+		nuevo.style.backgroundColor = color;
+	  	document.body.appendChild(nuevo); 
+		
+	}
+</script>
+<div id="cuadro">
+	<input type="button" onclick="anadir()">
+</div>
+
+</body>
+</html>

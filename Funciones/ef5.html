@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script language="JavaScript">
+	function letras(frase) {
+		frase = frase.toUpperCase();
+		var letras2 = frase.split("");
+		var frase2 ="";
+		var frase1 ="";
+		var index;
+		var index2;
+		for (index2 = 0; index2 < letras2.length; ++index2) {
+			if (letras2[index2] != " ") {
+				//var mayus = letras2[index].toUpperCase();
+				if (frase1 == "undefined") {
+					frase1 = letras2[index2];
+				} else {
+					frase1 = frase1 + letras2[index2];
+				}
+			}
+			
+		}
+		for (index = letras2.length; index >= 0; --index) {
+			if (letras2[index] != " ") {
+				//var mayus = letras2[index].toUpperCase();
+				if (frase2 == "undefined") {
+					frase2 = letras2[index];
+				} else {
+					frase2 = frase2 + letras2[index];
+				}
+			}
+			
+		}
+		if (frase2==frase1) {
+			return "La frase es un palindromo ";
+
+		} else {
+			return "La frase no es un palindromo ";
+		}
+		
+
+		
+	}
+	var frase = prompt("Escribe una frase: ");
+	document.write(letras(frase));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script language="JavaScript">
+	function letras(frase) {
+		var letras = ['A', 'E', 'I', 'O', 'U'];
+		var letras2 = frase.split("");
+		var vocal = 0;
+		var index;
+		var index2;
+		for (index = 0; index < letras2.length; ++index) {
+			for (index2 = 0; index2 < letras.length; ++index2) {
+				var mayus = letras2[index].toUpperCase();
+				if (mayus==letras[index2]){
+					vocal++;
+				}
+			}
+		}
+		return "La frase coniene "+vocal+" vocales.";
+		
+		
+	}
+	var frase = prompt("Escribe una frase: ");
+	document.write(letras(frase));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

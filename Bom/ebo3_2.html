@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Este es el titulo</title>
+	<script type="text/javascript">
+		function arriba() {
+			window.moveBy(0, -10);
+		}
+		function abajo() {
+			window.moveBy(0, 10);
+		}
+		function izquierda() {
+			window.moveBy(-10, 0);
+		}
+		function derecha() {
+			window.moveBy(10, 0);
+		}
+		function doblar() {
+			var sw = screen.width;
+			var sh = screen.height;
+			if ((window.innerWidth >= sw) || (window.innerHeight >= sh)) {
+				
+			} else {
+				window.resizeBy(window.innerWidth, window.innerHeight);
+			}
+			
+		}
+		function dividir() {
+			var wi = window.innerWidth / 2;
+			var he = window.innerHeight / 2;
+			if ((window.innerWidth <= 100) || (window.innerHeight <= 100)) {
+				
+			} else {
+				window.resizeBy(-wi, -he);
+			}
+			
+		}
+	</script>
+</head>
+<body>
+<input type="button" onclick="arriba()" value="Mover arriba 10px"><br/>
+<input type="button" onclick="abajo()" value="Mover abajo 10px"><br/>
+<input type="button" onclick="izquierda()" value="Mover izquierda 10px"><br/>
+<input type="button" onclick="derecha()" value="Mover derecha 10px"><br/>
+<input type="button" onclick="doblar()" value="Doblar tamaño"><br/>
+<input type="button" onclick="dividir()" value="Dividir tamaño"><br/>
+
+</body>
+</html>

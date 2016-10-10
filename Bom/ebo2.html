@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Este es el titulo</title>
+	<script type="text/javascript">
+		function info() {
+			var nuevo = document.createElement("div"); 
+			document.body.appendChild(nuevo); 
+	  		nuevo.innerHTML += "URL de la pagina actual: "+window.location.href+"<br/>";	
+	  		nuevo.innerHTML += "Navegador actual: "+navigator.appCodeName+"<br/>";
+	  		nuevo.innerHTML += "Titulo de la pagina actual: "+document.title+"<br/>";
+	  		nuevo.innerHTML += "Numero de formularios en la pagina actual: "+document.forms.length+"<br/>";
+	  		nuevo.innerHTML += "Tamaño de la ventana actual: "+window.innerWidth+" de ancho y "+innerHeight+" de alto<br/>";
+	  		nuevo.innerHTML += "El tamaño de tu historial es: "+history.length+"<br/>";
+	  		if (history.length > 6) {
+	  			nuevo.innerHTML += "Tal vez deberias dejar de navegar por un rato.<br/><br/>";
+	  		} else {
+	  			nuevo.innerHTML += "Sigue navegando.<br/><br/>";
+	  		}
+			
+		}
+	</script>
+</head>
+<body>
+<input type="button" onclick="info()" value="Informacion">
+
+</body>
+</html>

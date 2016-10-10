@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Eventos</title> 
+</head>
+<script type="text/javascript">
+  function aumentar(a)
+  {
+    document.getElementById(a).style.fontSize = "larger";
+  }
+</script>
+<body>
+   <p onclick="aumentar(this.id)" id="1">Este texto debe aumentar de tamaño</p>
+   <p onclick="aumentar(this.id)" id="2">Este texto debe aumentar de tamaño</p>
+   <p onclick="aumentar(this.id)" id="3">Este texto debe aumentar de tamaño</p>
+</body>
+</html>

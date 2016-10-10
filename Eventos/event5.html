@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Eventos</title> 
+</head>
+<style type="text/css">
+.linea{
+	height:100px; 
+	width:100px; 
+	background:blue;
+	display:inline-block;
+}
+</style>
+<script type="text/javascript">
+  function direccion(di)
+  {
+    document.getElementById('direc').value = di;
+  }
+</script>
+<body>
+<ol>
+	<li><a href="http://www.adobe.com/" onmouseover="direccion(this.href)">Adobe</a></li>
+	<li><a href="http://www.apple.com/" onmouseover="direccion(this.href)">Apple</a></li>
+	<li><a href="http://www.ibm.com/" onmouseover="direccion(this.href)">IBM</a></li>
+</ol>
+<input type="text" name="" id="direc">
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Este es el titulo</title>
+	<script type="text/javascript">
+		function arriba() {
+			window.moveBy(0, -10);
+		}
+		function abajo() {
+			window.moveBy(0, 10);
+		}
+		function izquierda() {
+			window.moveBy(-10, 0);
+		}
+		function derecha() {
+			window.moveBy(10, 0);
+		}
+		function doblar() {
+			var sw = screen.availWidth;
+			var sh = screen.availHeight;
+			if ((window.innerWidth >= sw) || (window.innerHeight >= sh)) {
+				
+			} else {
+				window.resizeBy(window.innerWidth, window.innerHeight);
+			}
+			
+		}
+		function dividir() {
+			var wi = window.innerWidth / 2;
+			var he = window.innerHeight / 2;
+			if ((window.innerWidth <= 100) || (window.innerHeight <= 100)) {
+				
+			} else {
+				window.resizeBy(-wi, -he);
+			}
+			
+		}
+		function mover() {
+			var sw = Math.random()*screen.availWidth;
+			var sh = Math.random()*screen.availHeight;
+			window.moveTo(sw, sh);
+		}
+	</script>
+</head>
+<body>
+<input type="button" onmouseover="mover()" onclick="arriba()" value="Mover arriba 10px"><br/>
+<input type="button" onmouseover="mover()" onclick="abajo()" value="Mover abajo 10px"><br/>
+<input type="button" onmouseover="mover()" onclick="izquierda()" value="Mover izquierda 10px"><br/>
+<input type="button" onmouseover="mover()" onclick="derecha()" value="Mover derecha 10px"><br/>
+<input type="button" onmouseover="mover()" onclick="doblar()" value="Doblar tamaño"><br/>
+<input type="button" onmouseover="mover()" onclick="dividir()" value="Dividir tamaño"><br/>
+
+</body>
+</html>
