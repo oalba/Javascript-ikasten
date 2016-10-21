@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript">
+window.onload = function (){
+	parra = document.getElementById("bat");
+	parra.addEventListener("click", color);
+	parra.addEventListener("dblclick", color);
+	
+}
+function color(event) {
+		if (event.type == "click") {
+			this.style.backgroundColor = "green";
+		} else if (event.type == "dblclick") {
+			this.style.backgroundColor = "red";
+		}
+	}
+</script>
+<body>
+	<p id="bat">Parrafo a clickar</p>
+</body>
+</html>

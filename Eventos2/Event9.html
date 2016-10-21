@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+var pancho = window.innerWidth;
+var palto = window.innerHeight;
+
+var pancho2 = pancho/2;
+var palto2 = palto/2;
+
+var posX = 0;
+var posY = 0;
+
+window.onload = function(){
+	centrado();
+	var cuadrado = document.getElementById("cuadrado");
+	cuadrado.addEventListener("mousedown", move, true);
+	cuadrado.addEventListener("mouseup", stop, true);
+}
+
+function centrado(){
+	var cuadrado = document.getElementById("cuadrado");
+
+	cuadrado.style.width="100px";
+	cuadrado.style.height= "100px";
+
+	pw = pancho2 - 50;
+	ph = palto2 - 50;
+	
+	cuadrado.style.left = pw + "px";
+	cuadrado.style.top = ph + "px";
+}
+function move(event) {
+	cuadrado.addEventListener("mousemove", move2, true);
+}
+
+function move2(event) {
+	var cuadrado = document.getElementById("cuadrado");
+	var mancho = event.pageX;
+	var malto = event.pageY;
+	var pancho2 = mancho - 50;
+	var palto2 = malto - 50;
+	cuadrado.style.left = pancho2 + "px";
+	cuadrado.style.top = palto2 + "px";
+	cuadrado.style.background = "blue";
+}
+
+function stop(event) {
+	var cuadrado = document.getElementById("cuadrado");
+	cuadrado.removeEventListener("mousemove", move2, true);
+	cuadrado.style.background = "yellow";
+}
+</script>
+</head>
+<body>
+<div id="cuadrado" style="background: yellow; position: fixed;"></div>
+</body>
+</html>

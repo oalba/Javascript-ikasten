@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+var pancho = window.innerWidth;
+var palto = window.innerHeight;
+
+var pancho2 = pancho/2;
+var palto2 = palto/2;
+
+var posX = 0;
+var posY = 0;
+
+window.onload = function(){
+	centrado();
+	document.addEventListener("keydown", move, true);
+}
+
+function centrado(){
+	var cuadrado = document.getElementById("cuadrado");
+
+	cuadrado.style.width="100px";
+	cuadrado.style.height= "100px";
+
+	pw = pancho2 - 50;
+	ph = palto2 - 50;
+	
+	cuadrado.style.left = pw + "px";
+	cuadrado.style.top = ph + "px";
+}
+
+function move(event) {
+	var cuadrado = document.getElementById("cuadrado");
+	var tecla = event.keyCode;
+	if (tecla == 37) {
+		// ezkerra
+		posX = posX - 10;
+		pw = pancho2 - 50 + posX;
+		cuadrado.style.left = pw + "px";
+	} else if (tecla == 38) {
+		// gora
+		posY = posY - 10;
+		ph = palto2 - 50 + posY;
+		cuadrado.style.top = ph + "px";
+	} else if (tecla == 39) {
+		// eskuinera
+		posX = posX + 10;
+		pw = pancho2 - 50 + posX;
+		cuadrado.style.left = pw + "px";;
+	} else if (tecla == 40) {
+		//behera
+		posY = posY + 10;
+		ph = palto2 - 50 + posY;
+		cuadrado.style.top = ph + "px";
+	}
+}
+</script>
+</head>
+<body>
+<div id="cuadrado" style="background: yellow; position: fixed;"></div>
+</body>
+</html>

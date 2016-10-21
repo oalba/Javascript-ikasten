@@ -12,7 +12,24 @@
 }
 </style>
 <script type="text/javascript">
-  function rojo(di)
+  window.onload = function (){
+  cuadrados = document.getElementsByTagName("div");
+  for (var i=0; i<cuadrados.length;i++){
+    cuadrados[i].onmouseenter = encima;
+    cuadrados[i].onmouseleave = salir;
+    cuadrados[i].onclick = clicar;
+  }
+  }
+  function encima(){
+    this.style.background = "green";
+  }
+  function salir(){
+    this.style.background = "blue";
+  }
+  function clicar(){
+    this.style.background = "red";
+  }
+  /*function rojo(di)
   {
     document.getElementById(di).style.background = "red";
   }
@@ -23,14 +40,20 @@
   function azul(di)
   {
     document.getElementById(di).style.background = "blue";
-  }
+  }*/
 </script>
 <body>
-<div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="ASR31">ASR31</div>
+<div class="linea">ASR31</div>
+<div class="linea">ASR32</div>
+<div class="linea">SM21</div>
+<div class="linea">SM22</div>
+<div class="linea">DW31</div>
+<div class="linea">DW32</div>
+<!--<div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="ASR31">ASR31</div>
 <div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="ASR32">ASR32</div>
 <div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="SM21">SM21</div>
 <div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="SM22">SM22</div>
 <div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="DW31">DW31</div>
-<div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="DW32">DW32</div>
+<div class="linea" onclick="rojo(this.id)" onmouseover="verde(this.id)" onmouseout="azul(this.id)" id="DW32">DW32</div>-->
 </body>
 </html>

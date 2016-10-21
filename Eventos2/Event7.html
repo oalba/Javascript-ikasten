@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+window.onload = function (){
+	document.addEventListener("mousemove", color, true);
+}
+function color(event) {
+	var pancho = window.innerWidth;
+	var palto = window.innerHeight;
+	var mancho = event.pageX;
+	var malto = event.pageY;
+
+    var pancho_10 = (pancho * 10) / 100;
+    var pancho_90 = pancho - pancho_10;
+    var palto_10 = (palto * 10) / 100;
+    var palto_90 = palto - palto_10;
+    var pancho_20 = (pancho * 20) / 100;
+    var pancho_80 = pancho - pancho_20;
+    var palto_20 = (palto * 20) / 100;
+    var palto_80 = palto - palto_20;
+    if (mancho < pancho_10 || mancho > pancho_90 || malto < palto_10 || malto > palto_90) {
+		event.target.style.background = "red";
+    } else if (mancho < pancho_20 || mancho > pancho_80 || malto < palto_20 || malto > palto_80) {
+		event.target.style.background = "yellow";
+    } else {
+		event.target.style.background = "green";
+    }
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

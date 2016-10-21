@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+var ventana;
+var tiempo;
+function openw() {
+	tiempo = setTimeout(cerrar, 5000);
+	ventana = window.open('','ventana','height=200,width=200');
+	ventana.addEventListener("click", contador, true);
+	ventana.addEventListener("mousemove", contador, true);
+}
+function contador() {
+	clearTimeout(tiempo);
+	tiempo = setTimeout(cerrar, 5000);
+}
+
+function cerrar(){
+	ventana.close();
+}
+</script>
+</head>
+<body>
+<button onclick="openw()">Abrir ventana</button>
+</body>
+</html>
