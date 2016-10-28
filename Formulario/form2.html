@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function colora() {
+			
+			var cuadrado = document.getElementById("cuadrado");
+			var cualindex = cuadrado.selectedIndex;
+			var cualop = cuadrado.options[cualindex];
+			var cual = cualop.value;
+
+			var color = document.getElementById("color");
+			var colorindex = color.selectedIndex;
+			var colorop = color.options[colorindex];
+			var color = colorop.value;
+
+			var cuadra = document.getElementById(cual);
+			cuadra.style.background = color;
+		}
+	</script>
+</head>
+<body>
+<form method="post" name="formulario">
+Cuadrado: <select name="cuadrado" id="cuadrado">
+		<option value="a1">1</option>
+		<option value="a2">2</option>
+		<option value="a3">3</option>
+		<option value="a4">4</option>
+	</select><br>
+Color: <select name="color" id="color">
+		<option value="red">Rojo</option>
+		<option value="blue">Azul</option>
+		<option value="yellow">Amarillo</option>
+		<option value="white">Blanco</option>
+		<option value="black">Negro</option>
+		<option value="green">Verde</option>
+	</select><br>
+<input type="button" name="Cambiar" onclick="colora()" value="Enviar">
+<div id="a1" style="width: 100px; height: 100px; background: yellow;">1</div>
+<div id="a2" style="width: 100px; height: 100px; background: yellow;">2</div>
+<div id="a3" style="width: 100px; height: 100px; background: yellow;">3</div>
+<div id="a4" style="width: 100px; height: 100px; background: yellow;">4</div>
+	
+</form>
+
+</body>
+</html>

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"onk",
+				"onkeypress	Attr"
+			],
+			[
+				"te",
+				"textarea	Tag"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"a",
+				"alert"
+			],
+			[
+				"f",
+				"formulario"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"ons",
+				"onsubmit	Attr"
+			],
+			[
 				"i",
 				"if	if"
 			],
@@ -54,10 +86,6 @@
 			[
 				"pr",
 				"primero"
-			],
-			[
-				"a",
-				"appendChild"
 			],
 			[
 				"re",
@@ -173,12 +201,16 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Eventos2"
+		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Formulario"
 	],
 	"file_history":
 	[
-		"/C/Users/ik012982i10/Desktop/jokua.html",
+		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Formulario/form3.html",
+		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Formulario/form4.html",
+		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Formulario/form2.html",
+		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Formulario/form1.html",
 		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Eventos2/Event9.html",
+		"/C/Users/ik012982i10/Desktop/jokua.html",
 		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Eventos2/Event7.html",
 		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Eventos2/Event6.html",
 		"/D/Odei/DesarrolloWebCliente/Javascript-ikasten/Eventos2/Event5.html",
@@ -241,6 +273,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"frmObj.id",
+			"direccion",
+			"color",
+			"dire",
+			"apellidos",
+			"nombre",
+			",",
+			"cual",
+			"cuadrado",
+			"indiceSeleccionado",
+			"opcionSeleccionada",
+			" position: fixed;",
+			"ape",
+			"nombre",
+			".value;",
+			"var ",
 			"erdian",
 			"palto2 - 50",
 			"pancho2 - 50",
@@ -356,7 +404,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "Event2.sublime-project",
+	"project": "form.sublime-project",
 	"replace":
 	{
 		"height": 42.0

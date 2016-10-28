@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function enviar() {
+			var email = document.getElementById("email");
+			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+			if (reg.test(email.value) == false) {
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+<form method="post" name="formulario" onsubmit="return enviar()">
+Nombre y apellidos: <input type="text" name="nombre" id="nombre"><br>
+Problema: <textarea id="problema" maxlength="100"></textarea><br>
+Telefono: <input type="number" name="tlf" id="tlf"><br>
+E-mail: <input type="email" name="email" id="email"><br>
+
+<input type="submit" value="Enviar"><br><br>
+
+	3.	Crea una página con un formulario que simulara la pagina de ayuda de cualquier web. Deberá pedirnos nombre y apellidos, habrá un área de texto para comentar nuestro problema (que tendrá un límite de 100 caracteres), teléfono (que solo aceptara números) y un campo de e-mail (que deberá tener formato de email). Si no se cumplen los requisitos no dejara enviar el formulario.
+	
+</form>
+
+</body>
+</html>

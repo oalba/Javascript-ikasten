@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function focus() {
+			document.getElementById("nombre").focus();
+		}
+		function enviar() {
+			var nombre = document.getElementById("nombre");
+			var apellidos = document.getElementById("apellidos");
+			var direccion = document.getElementById("direccion");
+			var poblacion = document.getElementById("poblacion");
+			var cp = document.getElementById("cp");
+			var provincia = document.getElementById("provincia");
+			var a = 0;
+			if (nombre.value == '') {
+				nombre.style.background = "red";
+				a = 1;
+			}
+			if (apellidos.value == '') {
+				apellidos.style.background = "red";
+				a = 1;
+			}
+			if (direccion.value == '') {
+				direccion.style.background = "red";
+				a = 1;
+			}
+			if (poblacion.value == '') {
+				poblacion.style.background = "red";
+				a = 1;
+			}
+			if (cp.value == '') {
+				cp.style.background = "red";
+				a = 1;
+			}
+			if (provincia.value == '') {
+				provincia.style.background = "red";
+				a = 1;
+			}
+			if (a == 1) {
+				return false;
+			} else {
+				document.forms["formulario"].submit();
+				return true;
+			}
+		}
+		function entertab(obj,e) {
+			
+			var e=(typeof event!='undefined')?window.event:e;// IE : Moz 
+			if(e.keyCode==13){ 
+				var ele = document.forms[0].elements; 
+				for(var i=0;i<ele.length;i++){ 
+					var q=(i==ele.length-1)?0:i+1;// if last element : if any other 
+					if(obj==ele[i]){
+						ele[q].focus();
+						break
+					} 
+				} 
+				return false; 
+			} 
+  
+		}
+	</script>
+</head>
+<body onload="focus()">
+<form method="post" name="formulario" id="formulario">
+
+Nombre: <input type="text" name="nombre" onkeypress="entertab(this,event)" id="nombre"><br>
+Apellidos: <input type="text" name="apellidos" onkeypress="entertab(this,event)" id="apellidos"><br>
+Dirección: <input type="text" name="direccion" onkeypress="entertab(this,event)" id="direccion"><br>
+Población: <input type="text" name="poblacion" onkeypress="entertab(this,event)" id="poblacion"><br>
+Código postal: <input type="number" name="cp" onkeypress="entertab(this,event)" id="cp"><br>
+Provincia: <input type="text" name="provincia" onkeypress="entertab(this,event)" id="provincia"><br>
+
+<input type="button" onclick="return enviar()" value="Enviar"><input type="reset" value="Limpiar"><br><br>
+
+	4.	Crea una página con un formulario que nos pedirá datos personales cada uno en un cuadro de texto: nombre, apellidos, dirección, población, código postal, provincia. Ordena los campos de manera  que queden en dos columnas. Al final del formulario habrá un botón de enviar y otro de limpiar el formulario. Al iniciar la página el cuadro de texto del nombre deberá tener el puntero listo para escribir y cuando pulsemos la tecla enter saltara al siguiente campo. En caso de que no se haya rellenado el campo deberá  poner el fondo rojo y no permitirá pulsar el botón de envió.
+
+</form>
+
+</body>
+</html>

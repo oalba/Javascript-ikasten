@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function validar() {
+			var nombre = document.getElementById("nombre");
+			var ape = document.getElementById("ape");
+			var dire = document.getElementById("dire");
+			if (nombre.value == '') {
+				window.alert("No ha introducido ningun nombre.");
+			}
+			if (ape.value == '') {
+				window.alert("No ha introducido ningun apellido.");
+			}
+			if (dire.value == '') {
+				window.alert("No ha introducido ninguna direccion.");
+			}
+				
+			window.alert("Los datos son: Nombre " + nombre.value + " Apellidos " + ape.value + " Direccion " + dire.value);
+		}
+	</script>
+</head>
+<body>
+<form method="post" name="formulario" onsubmit="return validar()">
+Nombre: <input type="text" name="nombre" id="nombre"><br>
+Apllidos: <input type="text" name="ape" id="ape"><br>
+Direccion: <input type="text" name="dire" id="dire"><br>
+<input type="submit" name="Comprobar">
+	
+</form>
+</body>
+</html>
