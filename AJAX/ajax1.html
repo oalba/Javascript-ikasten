@@ -5,40 +5,23 @@
 	<body>
 		<form method="post" name="formulario" id="formulario">
 			<input type="text" name="archivo" id="archivo">
-			<input type="submit" onsubmit="enviar()" value="Enviar">
+			<input type="button" onclick="enviar()" value="Enviar">
 		</form>
 		<div id="demo"></div>
 		<script type="text/javascript">
 			function enviar() {
 			  var xhttp = new XMLHttpRequest();
-			  
 			  xhttp.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 200) {
-			     document.getElementById("demo").innerHTML = this.responseText;
+			    	document.getElementById("demo").innerHTML = this.responseText;
+			    } else {
+			    	document.getElementById("demo").innerHTML = "El archivo no existe.";
 			    }
 			  };
-			  xhttp.open("GET", "info.txt", true);
+			  var archivo2 = document.getElementById("archivo");
+			  xhttp.open("GET", archivo2.value, true);
 			  xhttp.send();
 			}
-
-
-
-
-
-/*			function ajax(a,b,c){//url,function,just a placeholder
- c=new XMLHttpRequest;
- c.open('GET',a);
- c.onload=b;
- c.send()
-}
-
-function alertTxt(){
- alert(this.response)
-}
-
-window.onload=function(){
- ajax('hello.txt',alertTxt)
-}*/
 		</script>
 	</body>
 </html>
