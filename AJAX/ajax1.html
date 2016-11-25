@@ -1,0 +1,44 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<form method="post" name="formulario" id="formulario">
+			<input type="text" name="archivo" id="archivo">
+			<input type="submit" onsubmit="enviar()" value="Enviar">
+		</form>
+		<div id="demo"></div>
+		<script type="text/javascript">
+			function enviar() {
+			  var xhttp = new XMLHttpRequest();
+			  
+			  xhttp.onreadystatechange = function() {
+			    if (this.readyState == 4 && this.status == 200) {
+			     document.getElementById("demo").innerHTML = this.responseText;
+			    }
+			  };
+			  xhttp.open("GET", "info.txt", true);
+			  xhttp.send();
+			}
+
+
+
+
+
+/*			function ajax(a,b,c){//url,function,just a placeholder
+ c=new XMLHttpRequest;
+ c.open('GET',a);
+ c.onload=b;
+ c.send()
+}
+
+function alertTxt(){
+ alert(this.response)
+}
+
+window.onload=function(){
+ ajax('hello.txt',alertTxt)
+}*/
+		</script>
+	</body>
+</html>
