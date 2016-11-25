@@ -1,0 +1,35 @@
+<html>
+
+<body>
+<button type="button" onclick="enviar()">Enviar</button>
+<br><br>
+<table id="demo" border=1></table>
+
+<script>
+function enviar() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      xmlIrakurri(this);
+    }
+  };
+  xhttp.open("GET", "ajax2.xml", true);
+  xhttp.send();
+}
+function xmlIrakurri(xml) {
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Director</th><th>Pelicula</th></tr>";
+  var peliculas = xmlDoc.getElementsByTagName("Pelicula");
+  for (var i = 0; i <peliculas.length; i++) { 
+    table += "<tr><td>" +
+    peliculas[i].getElementsByTagName("Director")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    peliculas[i].getElementsByTagName("Titulo")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
