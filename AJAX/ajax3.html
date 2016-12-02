@@ -1,0 +1,82 @@
+<html>
+
+<body>
+<table id="demo" border=1></table>
+<div id="sinop"></div>
+
+
+<script type="text/javascript">
+window.onload = function enviar() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      xmlIrakurri(this);
+    }
+  };
+  xhttp.open("GET", "ajax2.xml", true);
+  xhttp.send();
+
+}
+function xmlIrakurri(xml) {
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Cartel</th><th>Director</th><th>Pelicula</th></tr>";
+  peliculas = xmlDoc.getElementsByTagName("Pelicula");
+  for (var i = 0; i <peliculas.length; i++) { 
+    table += "<tr><td><img id='"+ i +"' src='" +
+    peliculas[i].getElementsByTagName("Cartel")[0].childNodes[0].nodeValue +
+    "' height='200' width='130'/></td><td>" +
+    peliculas[i].getElementsByTagName("Director")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    peliculas[i].getElementsByTagName("Titulo")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+    
+  }
+  
+  
+  document.getElementById("demo").innerHTML = table;
+  setTimeout(1000, eventos());
+}
+
+function eventos() {
+    for (var x = 0; x <peliculas.length; x++) { 
+     var sin = peliculas[x].getElementsByTagName("Sinopsis")[0].childNodes[0].nodeValue;
+    document.getElementById(x).addEventListener('click', sinopsi);
+  }
+}
+
+function sinopsi(event){
+  //alert(event.target.name);
+    for (var i = 0; i <peliculas.length; i++) { 
+    if (event.target.id == i) {
+      var fitx = peliculas[i].getElementsByTagName("Sinopsis")[0].childNodes[0].nodeValue;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("sinop").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", fitx, true);
+      xhttp.send();
+    
+    }
+  }
+    //alert(event.target.src);
+    //document.getElementById("sinop").innerHTML = sin;
+}
+/*function sinopsis (xml) {
+    var xhttp2 = new XMLHttpRequest();
+  xhttp2.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var xmlDoc = xml.responseXML;
+        var peliculas = xmlDoc.getElementsByTagName("Pelicula");
+        var sino = peliculas[this].getElementsByTagName("Sinopsis")[0].childNodes[0].nodeValue;
+      document.getElementById("sinop").innerHTML = sino;
+    }
+  };
+  xhttp2.open("GET", "ajax2.xml", true);
+  xhttp2.send();
+}*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+
+<body>
+<input type="button" name="boton" onclick="enviar()" value="Enviar"/>
+<div id="botones"></div>
+<div id="sinop"></div>
+
+
+<script type="text/javascript">
+function enviar() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      xmlIrakurri(this);
+    }
+  };
+  xhttp.open("GET", "ajax2.xml", true);
+  xhttp.send();
+}
+
+function xmlIrakurri(xml) {
+  xmlDoc = xml.responseXML;
+  var botons="Director: <select id='director'><option></option>";
+  var peliculas = xmlDoc.getElementsByTagName("Pelicula");
+  for (var i = 0; i <peliculas.length; i++) { 
+    botons += "<option value='"+peliculas[i].getElementsByTagName("Director")[0].childNodes[0].nodeValue+"'>" +
+    peliculas[i].getElementsByTagName("Director")[0].childNodes[0].nodeValue +
+    "</option>";
+  }
+  botons += "</select> Pelicula: <select id='pelicul'></select>";
+  document.getElementById("botones").innerHTML = botons;
+  listenerrak();
+}
+function listenerrak(){
+  dire = document.getElementById("director")
+  dire.addEventListener("change", pelisShow);
+}
+function pelisShow(){
+  var opcion ="<option></option>";
+  var peliculas = xmlDoc.getElementsByTagName("Pelicula");
+  //var direc = document.getElementById("director");
+  var x = document.getElementById("director").selectedIndex;
+  var direc = document.getElementById("director").options;
+  for (var e = 0; e <peliculas.length; e++) { 
+    if (direc[x].text == peliculas[e].getElementsByTagName("Director")[0].childNodes[0].nodeValue) {
+      opcion += "<option value='"+peliculas[e].getElementsByTagName("Titulo")[0].childNodes[0].nodeValue+"'>"+
+      peliculas[e].getElementsByTagName("Titulo")[0].childNodes[0].nodeValue+
+      "</option>";
+    }
+  }
+  document.getElementById("pelicul").innerHTML = opcion;
+  listenerrak2();
+  
+}
+function listenerrak2(){
+  peli = document.getElementById("pelicul")
+  peli.addEventListener("change", sinoShow);
+}
+
+function sinoShow(event){
+  var peliculas = xmlDoc.getElementsByTagName("Pelicula");
+  //var direc = document.getElementById("director");
+  var x = document.getElementById("pelicul").selectedIndex;
+  var pelic = document.getElementById("pelicul").options;
+    for (var a = 0; a <peliculas.length; a++) { 
+    if (pelic[x].text == peliculas[a].getElementsByTagName("Titulo")[0].childNodes[0].nodeValue) {
+      var fitx = peliculas[a].getElementsByTagName("Sinopsis")[0].childNodes[0].nodeValue;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("sinop").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", fitx, true);
+      xhttp.send();
+    
+    }
+  }
+    //alert(event.target.src);
+    //document.getElementById("sinop").innerHTML = sin;
+}
+
+
+</script>
+</body>
+</html>

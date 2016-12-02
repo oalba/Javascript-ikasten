@@ -3,25 +3,37 @@
   <Pelicula>
      <Director>Quentin Tarantino</Director >
      <Titulo>Reservoir dogs</Titulo>
+     <Cartel>img/reservoir.jpg</Cartel>
+     <Sinopsis>sinopsis/sin1.txt</Sinopsis>
   </Pelicula >
   <Pelicula >
      <Director>Danny Boyle</Director >
      <Titulo>Trainspotting</Titulo>
+     <Cartel>img/trans.jpg</Cartel>
+     <Sinopsis>sinopsis/sin2.txt</Sinopsis>
   </Pelicula >
   <Pelicula >
      <Director>Christopher Nolan</Director >
      <Titulo>Batman Begins</Titulo>
+     <Cartel>img/batman.jpg</Cartel>
+     <Sinopsis>sinopsis/sin3.txt</Sinopsis>
   </Pelicula >
   <Pelicula >
-     <Director> Christopher Nolan </Director >
+     <Director>Christopher Nolan</Director >
      <Titulo>Inception</Titulo>
+     <Cartel>img/inception.jpg</Cartel>
+     <Sinopsis>sinopsis/sin4.txt</Sinopsis>
   </Pelicula >
   <Pelicula >
-     <Director> Guy Ritchie </Director >
-     <Titulo>Snach</Titulo>
+     <Director>Guy Ritchie</Director >
+     <Titulo>Snatch</Titulo>
+     <Cartel>img/snatch.jpg</Cartel>
+     <Sinopsis>sinopsis/sin5.txt</Sinopsis>
   </Pelicula >
   <Pelicula >
      <Director>Ridley Scott</Director >
      <Titulo>Gladiator</Titulo>
+     <Cartel>img/gladiator.jpg</Cartel>
+     <Sinopsis>sinopsis/sin6.txt</Sinopsis>
   </Pelicula >
 </Peliculas>
