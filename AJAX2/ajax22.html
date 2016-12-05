@@ -1,0 +1,43 @@
+<html>
+
+<body>
+    <input id="nombre" type="text" name="nombre"/>
+<table id="demo" border=1></table>
+
+<script>
+var nombre = document.getElementById("nombre");
+nombre.addEventListener("keypress", enviar);
+function enviar() {
+  var xmlhttp = new XMLHttpRequest();
+  var url = "ajax22.json";
+
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var myArr = JSON.parse(this.responseText);
+          myFunction(myArr);
+      }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+
+function myFunction(nombres) {
+  var table="<tr><th>Nombres</th></tr>";
+  var haber = 0;
+  for (var i = 0; i <nombres.length; i++) { 
+      if (nombres[i].Nombre.toLowerCase().indexOf(nombre.value.toLowerCase()) >= 0){
+          table += "<tr><td>" +
+            nombres[i].Nombre +
+            "</td></tr>";
+            haber = 1;
+      }
+  }
+  if (haber == 0){
+      table += "<tr><td>No hay coincidencias</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
