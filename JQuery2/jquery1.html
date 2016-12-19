@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Practice with jquery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script languajes="javascript">
+	$(document).ready(function(){
+		//alert($("div#asientos > ul#zona_vip li>ul>li").length);
+		$("#mio").html($("div#asientos > ul#zona_vip li>ul>li").text());
+		$("#mio").append("<br/>");
+		$("#mio").append("<br/>");
+		
+		//alert($("div#asientos > ul#zona_popular li>ul>li").length);
+		$("#mio").append($("div#asientos > ul#zona_popular li>ul>li").text());
+		$("#mio").append("<br/>");
+		$("#mio").append("<br/>");
+		
+		$("ul li").each(function(){
+		    $(this).find("ul li").eq(2).css({'color' : 'red'});
+		})
+		
+		$("ul#zona_vip li>ul>li").css({'color' : 'red'});
+		//$("ul#zona_vip li").get(0).html("FILA completa");
+		var cache = $('ul#zona_vip li').children();
+        $('ul#zona_vip>i>li').text('FILA completa').append(cache);
+        
+        $("#mio").append($("div#asientos > ul li>ul>li").filter(function () { 
+            return this.style.color != 'red' 
+        }).length);
+        $("#mio").append(" asientos libres<br/>");
+		$("#mio").append("<br/>");
+		
+		$("div#asientos > ul li>ul>li:even").css({'color' : 'blue'});
+		
+		var asientos = [1,2,3,4,5];
+		$("ul#zona_popular").append("<li id='row_5'>FILA libre<ul>")
+		$.each(
+		    asientos,
+		    function(intIndex,objValue){
+		        $("li#row_5>ul").append(
+			        $("<li>asiento 5-"+objValue+"</li>")
+			    );
+		    }
+	    );
+	    $("ul#zona_popular").append("</ul></li>")
+		
+		$("#zona_vip").remove();
+		var ida = 1;
+		$("ul#zona_popular > li").each(function(){
+		    var ula = this;
+		    $(ula).attr('id', 'row_' + ida);
+		    var silla = 1;
+		    $("li#row_"+ida+" > ul > li").each(function(){
+		        $(this).text("asiento "+ida+"-"+silla);
+		        silla++;
+		    })
+		    ida++;
+		})
+	});
+	</script>
+</head>
+
+<body>
+    <div id="mio"></div>
+<div id="asientos"><b>CINE ZUBIRI</b>
+<ul id="zona_vip"><i>
+   <li id="row_1">FILA Libre
+    <ul>
+     <li>asiento 1-1</li>
+     <li>asiento 1-2</li>
+     <li>asiento 1-3</li>
+     <li>asiento 1-4</li>
+     <li>asiento 1-5</li>
+    </ul>
+   </li>
+</i></ul>
+<ul id="zona_popular">
+  <li id="row_2">FILA Libre
+   <ul>
+    <li>asiento 2-1</li>
+    <li>asiento 2-2</li>
+    <li>asiento 2-3</li>
+    <li>asiento 2-4</li>
+    <li>asiento 2-5</li>
+   </ul>
+  </li>
+    <li id="row_3">FILA Libre
+   <ul>
+    <li>asiento 3-1</li>
+    <li>asiento 3-2</li>
+    <li>asiento 3-3</li>
+    <li>asiento 3-4</li>
+    <li>asiento 3-5</li>
+   </ul>
+  </li>
+    <li id="row_4">FILA Libre
+   <ul>
+    <li>asiento 4-1</li>
+    <li>asiento 4-2</li>
+    <li>asiento 4-3</li>
+    <li>asiento 4-4</li>
+    <li>asiento 4-5</li>
+   </ul>
+  </li>
+</ul>
+</div>
+</body>
+</html>
