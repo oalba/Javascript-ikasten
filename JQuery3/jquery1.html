@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Ejercicios JQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script languajes="javascript">
+$(document).ready(function(){
+    var hora;
+    var puerta;
+    var destino;
+    //1
+	$("h1 > i").text("815 Oceanic");
+	//1
+	
+	//2
+	if ($("tr#time > td").text() == ""){
+	    hora = "Sin asignar";
+	} else {
+	    hora = $("tr#time > td").text();
+	}
+	
+	if ($("tr#gate > td").text() == ""){
+	    puerta = "Sin asignar";
+	} else {
+	    puerta = $("tr#gate > td").text();
+	}
+	
+	if ($("tr#arrives > td").text() == ""){
+	    destino = "Sin asignar";
+	} else {
+	    destino = $("tr#arrives > td").text();
+	}
+	
+	$("tr#time > td").text(hora);
+	$("tr#gate > td").text(puerta);
+	$("tr#arrives > td").text(destino);
+	//2
+	
+	//3
+	$("h2").each(function(){
+		var data = this;
+		$(data).append(" " + new Date($.now()));
+	});
+	//3
+	
+	//5
+	$("ul > li").each(function(){
+	    var pasa = this;
+	    if($(pasa).text().charAt(0) == "j" || $(pasa).text().charAt(0) == "J"){
+	        $(pasa).addClass("penembar");
+	    } else {
+	        $(pasa).addClass("embar");
+	    }
+	})
+	//5
+	
+	//6
+	hora = "15:35";
+	puerta = "8";
+	destino = "Londres";
+	//6
+	
+	//7
+	$("ul > li").each(function(){
+	    var pasa = this;
+	    $(pasa).removeClass();
+	    if($(pasa).text() == "Charlie Pace"){
+	        $(pasa).addClass("penembar");
+	    } else {
+	        $(pasa).addClass("embar");
+	    }
+	})
+	//7
+	
+	$("tr#time > td").text(hora);
+	$("tr#gate > td").text(puerta);
+	$("tr#arrives > td").text(destino);
+
+});
+</script>
+<style type="text/css">
+/*4*/
+.embar {
+    color : green
+    
+}
+.noembar{
+    color : red
+}
+.penembar{
+    color: blue
+}
+/*4*/
+</style>
+</head>
+<body>
+<h1>Vuelo <i> sin especificar </i></h1>
+<h2>Logistica</h2>
+<table id="logistics">
+ <tbody>
+ <tr id="time">
+  <th>Hora:</th>
+  <td></td>
+ </tr>
+ <tr id="gate">
+  <th>Puerta:</th>
+  <td></td>
+ </tr>
+ <tr id="arrives">
+  <th>Destino:</th>
+  <td></td>
+ </tr>
+ </tbody>
+</table>
+<h2>Pasajeros</h2>
+<ul>
+ <li>Jack Shephard</li>
+ <li>Kate Austin</li>
+ <li>James “Sawyer” Ford</li>
+ <li>John Locke</li>
+ <li>Hugo “Hurley” Reyes</li>
+ <li>Benjamin Linus</li>
+ <li>Charlie Pace</li>
+ <li>Juliet Burke</li>
+</ul>
+</body>
+</html>
